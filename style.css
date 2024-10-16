@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 60px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.node-box {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.node-box:hover {
+    transform: scale(1.05);
+}
+
+.node-box.broken {
+    background-color: #dc3545;
+    border-color: #c82333;
+}
+
+.status-text {
+    color: #333;
+    font-weight: bold;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px;
+    margin: 0 5px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 150px;
+    appearance: none;
+    background-color: white;
+    font-size: 16px;
+}
+
+.stop-message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #dc3545;
+}
