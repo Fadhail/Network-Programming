@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Topologi Bus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1080px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .node-input {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .node-input label {
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #messageInput {
+            display: none;
+        }
+        .node-box {
+            width: 120px; /* Width of each node box */
+            height: 120px; /* Height of each node box */
+            margin: 10px; /* Space between boxes */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ccc; /* Border color */
+            border-radius: 10px; /* Rounded corners */
+            background-color: #f8f9fa; /* Light background color */
+            position: relative; /* For positioning status text */
+            transition: background 0.3s, border 0.3s;
+        }
+        .node-box:hover {
+            background: #f1f1f1; /* Change background on hover */
+        }
+        .broken {
+            border-color: red; /* Border color for broken nodes */
+            background-color: #ffe5e5; /* Background color for broken nodes */
+        }
+        .status-text {
+            font-weight: bold;
+            color: #343a40;
+        }
+        .message-text {
+            margin-top: 5px; /* Space between status and message */
+            font-style: italic; /* Italic for message text */
+            color: #6c757d; /* Grey color for message text */
+        }
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+            margin: 0 auto; /* Center the inputs */
+        }
+        #output {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping of nodes */
+            justify-content: center; /* Center the boxes */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulasi Topologi Bus</h1>
+        <div class="node-input">
+            <label for="numNodes">Masukkan jumlah komputer:</label>
+            <input type="number" id="numNodes" min="2" class="form-control" />
+        </div>
+        <div class="node-input" id="nodeStatusInputs"></div>
+        <div class="button-container">
+            <button id="setupNodes"><i class="fas fa-plus-circle"></i> Setup Nodes</button>
+        </div>
+        
+        <div id="messageInput">
+            <h3>Kirim Pesan</h3>
+            <div class="node-input">
+                <label for="senderId">ID Komputer pengirim:</label>
+                <input type="number" id="senderId" class="form-control" />
+            </div>
+            <div class="node-input">
+                <label for="receiverId">ID Komputer penerima:</label>
+                <input type="number" id="receiverId" class="form-control" />
+            </div>
+            <div class="node-input">
+                <label for="message">Pesan:</label>
+                <input type="text" id="message" class="form-control" />
+            </div>
+            <div class="button-container">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+            </div>
+        </div>
+        
+        <div id="output"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
