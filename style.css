@@ -110,3 +110,31 @@ select {
     text-align: center;
     color: #dc3545;
 }
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    select {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .node-box {
+        width: 60px; 
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    .node-box {
+        width: 50px;
+        height: 50px;
+    }
+}
